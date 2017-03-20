@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8CF190B31E7F94BC00DB3049 /* EasyResignyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF190B21E7F94BC00DB3049 /* EasyResignyTests.m */; };
+		8CF190BE1E7F94BC00DB3049 /* EasyResignyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF190BD1E7F94BC00DB3049 /* EasyResignyUITests.m */; };
+		8CF190CD1E7F950900DB3049 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF190CC1E7F950900DB3049 /* Cocoa.framework */; };
+		8CF190CF1E7F951100DB3049 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF190CE1E7F951100DB3049 /* AppKit.framework */; };
+		8CF190D11E7F952B00DB3049 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF190D01E7F952B00DB3049 /* Foundation.framework */; };
+		8CF190F21E7FACCF00DB3049 /* NYCmdTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF190E61E7FACCF00DB3049 /* NYCmdTool.m */; };
+		8CF190F31E7FACCF00DB3049 /* NYCocoaKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF190E81E7FACCF00DB3049 /* NYCocoaKit.m */; };
+		8CF190F41E7FACCF00DB3049 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF190EB1E7FACCF00DB3049 /* AppDelegate.m */; };
+		8CF190F51E7FACCF00DB3049 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF190EC1E7FACCF00DB3049 /* main.m */; };
+		8CF190F61E7FACCF00DB3049 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CF190EE1E7FACCF00DB3049 /* Assets.xcassets */; };
+		8CF190F71E7FACCF00DB3049 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CF190EF1E7FACCF00DB3049 /* MainMenu.xib */; };
+		8CF190F81E7FACCF00DB3049 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CF190F11E7FACCF00DB3049 /* Info.plist */; };
+		8CF191011E7FAE4100DB3049 /* AppDelegate+ERSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF191001E7FAE4100DB3049 /* AppDelegate+ERSetup.m */; };
+		8CF191061E7FBD5B00DB3049 /* ERDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF191041E7FBD5B00DB3049 /* ERDashboardViewController.m */; };
+		8CF191071E7FBD5B00DB3049 /* ERDashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CF191051E7FBD5B00DB3049 /* ERDashboardViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8CF190AF1E7F94BC00DB3049 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CF190931E7F94BC00DB3049 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CF1909A1E7F94BC00DB3049;
+			remoteInfo = EasyResigny;
+		};
+		8CF190BA1E7F94BC00DB3049 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CF190931E7F94BC00DB3049 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CF1909A1E7F94BC00DB3049;
+			remoteInfo = EasyResigny;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8CF1909B1E7F94BC00DB3049 /* EasyResigny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyResigny.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CF190AE1E7F94BC00DB3049 /* EasyResignyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyResignyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CF190B21E7F94BC00DB3049 /* EasyResignyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyResignyTests.m; sourceTree = "<group>"; };
+		8CF190B41E7F94BC00DB3049 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CF190B91E7F94BC00DB3049 /* EasyResignyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyResignyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CF190BD1E7F94BC00DB3049 /* EasyResignyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyResignyUITests.m; sourceTree = "<group>"; };
+		8CF190BF1E7F94BC00DB3049 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CF190CC1E7F950900DB3049 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		8CF190CE1E7F951100DB3049 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		8CF190D01E7F952B00DB3049 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8CF190E51E7FACCF00DB3049 /* NYCmdTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYCmdTool.h; sourceTree = "<group>"; };
+		8CF190E61E7FACCF00DB3049 /* NYCmdTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYCmdTool.m; sourceTree = "<group>"; };
+		8CF190E71E7FACCF00DB3049 /* NYCocoaKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYCocoaKit.h; sourceTree = "<group>"; };
+		8CF190E81E7FACCF00DB3049 /* NYCocoaKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYCocoaKit.m; sourceTree = "<group>"; };
+		8CF190EA1E7FACCF00DB3049 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8CF190EB1E7FACCF00DB3049 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8CF190EC1E7FACCF00DB3049 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8CF190EE1E7FACCF00DB3049 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8CF190F01E7FACCF00DB3049 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		8CF190F11E7FACCF00DB3049 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CF190FF1E7FAE4100DB3049 /* AppDelegate+ERSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ERSetup.h"; sourceTree = "<group>"; };
+		8CF191001E7FAE4100DB3049 /* AppDelegate+ERSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ERSetup.m"; sourceTree = "<group>"; };
+		8CF191031E7FBD5B00DB3049 /* ERDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERDashboardViewController.h; sourceTree = "<group>"; };
+		8CF191041E7FBD5B00DB3049 /* ERDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERDashboardViewController.m; sourceTree = "<group>"; };
+		8CF191051E7FBD5B00DB3049 /* ERDashboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ERDashboardViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8CF190981E7F94BC00DB3049 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CF190D11E7F952B00DB3049 /* Foundation.framework in Frameworks */,
+				8CF190CF1E7F951100DB3049 /* AppKit.framework in Frameworks */,
+				8CF190CD1E7F950900DB3049 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CF190AB1E7F94BC00DB3049 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CF190B61E7F94BC00DB3049 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8CF190921E7F94BC00DB3049 = {
+			isa = PBXGroup;
+			children = (
+				8CF1909D1E7F94BC00DB3049 /* EasyResigny */,
+				8CF190B11E7F94BC00DB3049 /* EasyResignyTests */,
+				8CF190BC1E7F94BC00DB3049 /* EasyResignyUITests */,
+				8CF1909C1E7F94BC00DB3049 /* Products */,
+				8CF190CB1E7F950900DB3049 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8CF1909C1E7F94BC00DB3049 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8CF1909B1E7F94BC00DB3049 /* EasyResigny.app */,
+				8CF190AE1E7F94BC00DB3049 /* EasyResignyTests.xctest */,
+				8CF190B91E7F94BC00DB3049 /* EasyResignyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8CF1909D1E7F94BC00DB3049 /* EasyResigny */ = {
+			isa = PBXGroup;
+			children = (
+				8CF190E31E7FACCF00DB3049 /* Classes */,
+				8CF190ED1E7FACCF00DB3049 /* Resources */,
+			);
+			path = EasyResigny;
+			sourceTree = "<group>";
+		};
+		8CF190B11E7F94BC00DB3049 /* EasyResignyTests */ = {
+			isa = PBXGroup;
+			children = (
+				8CF190B21E7F94BC00DB3049 /* EasyResignyTests.m */,
+				8CF190B41E7F94BC00DB3049 /* Info.plist */,
+			);
+			path = EasyResignyTests;
+			sourceTree = "<group>";
+		};
+		8CF190BC1E7F94BC00DB3049 /* EasyResignyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8CF190BD1E7F94BC00DB3049 /* EasyResignyUITests.m */,
+				8CF190BF1E7F94BC00DB3049 /* Info.plist */,
+			);
+			path = EasyResignyUITests;
+			sourceTree = "<group>";
+		};
+		8CF190CB1E7F950900DB3049 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CF190D01E7F952B00DB3049 /* Foundation.framework */,
+				8CF190CE1E7F951100DB3049 /* AppKit.framework */,
+				8CF190CC1E7F950900DB3049 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CF190E31E7FACCF00DB3049 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8CF190E91E7FACCF00DB3049 /* Main */,
+				8CF190E41E7FACCF00DB3049 /* Library */,
+				8CF191021E7FBCD300DB3049 /* Modules */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8CF190E41E7FACCF00DB3049 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				8CF190E51E7FACCF00DB3049 /* NYCmdTool.h */,
+				8CF190E61E7FACCF00DB3049 /* NYCmdTool.m */,
+				8CF190E71E7FACCF00DB3049 /* NYCocoaKit.h */,
+				8CF190E81E7FACCF00DB3049 /* NYCocoaKit.m */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		8CF190E91E7FACCF00DB3049 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8CF190EA1E7FACCF00DB3049 /* AppDelegate.h */,
+				8CF190EB1E7FACCF00DB3049 /* AppDelegate.m */,
+				8CF190EC1E7FACCF00DB3049 /* main.m */,
+				8CF190FF1E7FAE4100DB3049 /* AppDelegate+ERSetup.h */,
+				8CF191001E7FAE4100DB3049 /* AppDelegate+ERSetup.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8CF190ED1E7FACCF00DB3049 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8CF190EE1E7FACCF00DB3049 /* Assets.xcassets */,
+				8CF190EF1E7FACCF00DB3049 /* MainMenu.xib */,
+				8CF190F11E7FACCF00DB3049 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8CF191021E7FBCD300DB3049 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8CF191031E7FBD5B00DB3049 /* ERDashboardViewController.h */,
+				8CF191041E7FBD5B00DB3049 /* ERDashboardViewController.m */,
+				8CF191051E7FBD5B00DB3049 /* ERDashboardViewController.xib */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8CF1909A1E7F94BC00DB3049 /* EasyResigny */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CF190C21E7F94BC00DB3049 /* Build configuration list for PBXNativeTarget "EasyResigny" */;
+			buildPhases = (
+				8CF190971E7F94BC00DB3049 /* Sources */,
+				8CF190981E7F94BC00DB3049 /* Frameworks */,
+				8CF190991E7F94BC00DB3049 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EasyResigny;
+			productName = EasyResigny;
+			productReference = 8CF1909B1E7F94BC00DB3049 /* EasyResigny.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8CF190AD1E7F94BC00DB3049 /* EasyResignyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CF190C51E7F94BC00DB3049 /* Build configuration list for PBXNativeTarget "EasyResignyTests" */;
+			buildPhases = (
+				8CF190AA1E7F94BC00DB3049 /* Sources */,
+				8CF190AB1E7F94BC00DB3049 /* Frameworks */,
+				8CF190AC1E7F94BC00DB3049 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8CF190B01E7F94BC00DB3049 /* PBXTargetDependency */,
+			);
+			name = EasyResignyTests;
+			productName = EasyResignyTests;
+			productReference = 8CF190AE1E7F94BC00DB3049 /* EasyResignyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8CF190B81E7F94BC00DB3049 /* EasyResignyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CF190C81E7F94BC00DB3049 /* Build configuration list for PBXNativeTarget "EasyResignyUITests" */;
+			buildPhases = (
+				8CF190B51E7F94BC00DB3049 /* Sources */,
+				8CF190B61E7F94BC00DB3049 /* Frameworks */,
+				8CF190B71E7F94BC00DB3049 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8CF190BB1E7F94BC00DB3049 /* PBXTargetDependency */,
+			);
+			name = EasyResignyUITests;
+			productName = EasyResignyUITests;
+			productReference = 8CF190B91E7F94BC00DB3049 /* EasyResignyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8CF190931E7F94BC00DB3049 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ER;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = suneny;
+				TargetAttributes = {
+					8CF1909A1E7F94BC00DB3049 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					8CF190AD1E7F94BC00DB3049 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8CF1909A1E7F94BC00DB3049;
+					};
+					8CF190B81E7F94BC00DB3049 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8CF1909A1E7F94BC00DB3049;
+					};
+				};
+			};
+			buildConfigurationList = 8CF190961E7F94BC00DB3049 /* Build configuration list for PBXProject "EasyResigny" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8CF190921E7F94BC00DB3049;
+			productRefGroup = 8CF1909C1E7F94BC00DB3049 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8CF1909A1E7F94BC00DB3049 /* EasyResigny */,
+				8CF190AD1E7F94BC00DB3049 /* EasyResignyTests */,
+				8CF190B81E7F94BC00DB3049 /* EasyResignyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8CF190991E7F94BC00DB3049 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CF191071E7FBD5B00DB3049 /* ERDashboardViewController.xib in Resources */,
+				8CF190F61E7FACCF00DB3049 /* Assets.xcassets in Resources */,
+				8CF190F71E7FACCF00DB3049 /* MainMenu.xib in Resources */,
+				8CF190F81E7FACCF00DB3049 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CF190AC1E7F94BC00DB3049 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CF190B71E7F94BC00DB3049 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8CF190971E7F94BC00DB3049 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CF191011E7FAE4100DB3049 /* AppDelegate+ERSetup.m in Sources */,
+				8CF190F21E7FACCF00DB3049 /* NYCmdTool.m in Sources */,
+				8CF191061E7FBD5B00DB3049 /* ERDashboardViewController.m in Sources */,
+				8CF190F31E7FACCF00DB3049 /* NYCocoaKit.m in Sources */,
+				8CF190F51E7FACCF00DB3049 /* main.m in Sources */,
+				8CF190F41E7FACCF00DB3049 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CF190AA1E7F94BC00DB3049 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CF190B31E7F94BC00DB3049 /* EasyResignyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CF190B51E7F94BC00DB3049 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CF190BE1E7F94BC00DB3049 /* EasyResignyUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8CF190B01E7F94BC00DB3049 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CF1909A1E7F94BC00DB3049 /* EasyResigny */;
+			targetProxy = 8CF190AF1E7F94BC00DB3049 /* PBXContainerItemProxy */;
+		};
+		8CF190BB1E7F94BC00DB3049 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CF1909A1E7F94BC00DB3049 /* EasyResigny */;
+			targetProxy = 8CF190BA1E7F94BC00DB3049 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8CF190EF1E7FACCF00DB3049 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CF190F01E7FACCF00DB3049 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8CF190C01E7F94BC00DB3049 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8CF190C11E7F94BC00DB3049 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8CF190C31E7F94BC00DB3049 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/EasyResigny/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = that.boring.bear.ny.EasyResigny;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8CF190C41E7F94BC00DB3049 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/EasyResigny/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = that.boring.bear.ny.EasyResigny;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8CF190C61E7F94BC00DB3049 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EasyResignyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = that.boring.bear.ny.EasyResignyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyResigny.app/Contents/MacOS/EasyResigny";
+			};
+			name = Debug;
+		};
+		8CF190C71E7F94BC00DB3049 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EasyResignyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = that.boring.bear.ny.EasyResignyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyResigny.app/Contents/MacOS/EasyResigny";
+			};
+			name = Release;
+		};
+		8CF190C91E7F94BC00DB3049 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EasyResignyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = that.boring.bear.ny.EasyResignyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = EasyResigny;
+			};
+			name = Debug;
+		};
+		8CF190CA1E7F94BC00DB3049 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = EasyResignyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = that.boring.bear.ny.EasyResignyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = EasyResigny;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8CF190961E7F94BC00DB3049 /* Build configuration list for PBXProject "EasyResigny" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CF190C01E7F94BC00DB3049 /* Debug */,
+				8CF190C11E7F94BC00DB3049 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CF190C21E7F94BC00DB3049 /* Build configuration list for PBXNativeTarget "EasyResigny" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CF190C31E7F94BC00DB3049 /* Debug */,
+				8CF190C41E7F94BC00DB3049 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8CF190C51E7F94BC00DB3049 /* Build configuration list for PBXNativeTarget "EasyResignyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CF190C61E7F94BC00DB3049 /* Debug */,
+				8CF190C71E7F94BC00DB3049 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8CF190C81E7F94BC00DB3049 /* Build configuration list for PBXNativeTarget "EasyResignyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CF190C91E7F94BC00DB3049 /* Debug */,
+				8CF190CA1E7F94BC00DB3049 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8CF190931E7F94BC00DB3049 /* Project object */;
+}
