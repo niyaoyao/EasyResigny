@@ -7,21 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8CD3C1C41E80EA8000A54AB9 /* NYCmdTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C1B21E80EA8000A54AB9 /* NYCmdTool.m */; };
+		8CD3C1C51E80EA8000A54AB9 /* NYCocoaKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C1B41E80EA8000A54AB9 /* NYCocoaKit.m */; };
+		8CD3C1C61E80EA8000A54AB9 /* AppDelegate+ERSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C1B71E80EA8000A54AB9 /* AppDelegate+ERSetup.m */; };
+		8CD3C1C71E80EA8000A54AB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C1B91E80EA8000A54AB9 /* AppDelegate.m */; };
+		8CD3C1C81E80EA8000A54AB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C1BA1E80EA8000A54AB9 /* main.m */; };
+		8CD3C1C91E80EA8000A54AB9 /* ERDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C1BF1E80EA8000A54AB9 /* ERDashboardViewController.m */; };
+		8CD3C1CA1E80EA8000A54AB9 /* ERDashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD3C1C01E80EA8000A54AB9 /* ERDashboardViewController.xib */; };
+		8CD3C1CB1E80EA8000A54AB9 /* ERDragTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C1C31E80EA8000A54AB9 /* ERDragTextField.m */; };
+		8CD3C1CE1E80EAB200A54AB9 /* ERContex.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C1CD1E80EAB200A54AB9 /* ERContex.m */; };
+		8CD3C1D11E81333700A54AB9 /* ERResignProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C1D01E81333700A54AB9 /* ERResignProcess.m */; };
 		8CF190B31E7F94BC00DB3049 /* EasyResignyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF190B21E7F94BC00DB3049 /* EasyResignyTests.m */; };
 		8CF190BE1E7F94BC00DB3049 /* EasyResignyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF190BD1E7F94BC00DB3049 /* EasyResignyUITests.m */; };
 		8CF190CD1E7F950900DB3049 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF190CC1E7F950900DB3049 /* Cocoa.framework */; };
 		8CF190CF1E7F951100DB3049 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF190CE1E7F951100DB3049 /* AppKit.framework */; };
 		8CF190D11E7F952B00DB3049 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF190D01E7F952B00DB3049 /* Foundation.framework */; };
-		8CF190F21E7FACCF00DB3049 /* NYCmdTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF190E61E7FACCF00DB3049 /* NYCmdTool.m */; };
-		8CF190F31E7FACCF00DB3049 /* NYCocoaKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF190E81E7FACCF00DB3049 /* NYCocoaKit.m */; };
-		8CF190F41E7FACCF00DB3049 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF190EB1E7FACCF00DB3049 /* AppDelegate.m */; };
-		8CF190F51E7FACCF00DB3049 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF190EC1E7FACCF00DB3049 /* main.m */; };
 		8CF190F61E7FACCF00DB3049 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CF190EE1E7FACCF00DB3049 /* Assets.xcassets */; };
 		8CF190F71E7FACCF00DB3049 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CF190EF1E7FACCF00DB3049 /* MainMenu.xib */; };
 		8CF190F81E7FACCF00DB3049 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CF190F11E7FACCF00DB3049 /* Info.plist */; };
-		8CF191011E7FAE4100DB3049 /* AppDelegate+ERSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF191001E7FAE4100DB3049 /* AppDelegate+ERSetup.m */; };
-		8CF191061E7FBD5B00DB3049 /* ERDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF191041E7FBD5B00DB3049 /* ERDashboardViewController.m */; };
-		8CF191071E7FBD5B00DB3049 /* ERDashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CF191051E7FBD5B00DB3049 /* ERDashboardViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8CD3C1B11E80EA8000A54AB9 /* NYCmdTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYCmdTool.h; sourceTree = "<group>"; };
+		8CD3C1B21E80EA8000A54AB9 /* NYCmdTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYCmdTool.m; sourceTree = "<group>"; };
+		8CD3C1B31E80EA8000A54AB9 /* NYCocoaKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYCocoaKit.h; sourceTree = "<group>"; };
+		8CD3C1B41E80EA8000A54AB9 /* NYCocoaKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYCocoaKit.m; sourceTree = "<group>"; };
+		8CD3C1B61E80EA8000A54AB9 /* AppDelegate+ERSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ERSetup.h"; sourceTree = "<group>"; };
+		8CD3C1B71E80EA8000A54AB9 /* AppDelegate+ERSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ERSetup.m"; sourceTree = "<group>"; };
+		8CD3C1B81E80EA8000A54AB9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8CD3C1B91E80EA8000A54AB9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8CD3C1BA1E80EA8000A54AB9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8CD3C1BE1E80EA8000A54AB9 /* ERDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERDashboardViewController.h; sourceTree = "<group>"; };
+		8CD3C1BF1E80EA8000A54AB9 /* ERDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERDashboardViewController.m; sourceTree = "<group>"; };
+		8CD3C1C01E80EA8000A54AB9 /* ERDashboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ERDashboardViewController.xib; sourceTree = "<group>"; };
+		8CD3C1C21E80EA8000A54AB9 /* ERDragTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERDragTextField.h; sourceTree = "<group>"; };
+		8CD3C1C31E80EA8000A54AB9 /* ERDragTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERDragTextField.m; sourceTree = "<group>"; };
+		8CD3C1CC1E80EAB200A54AB9 /* ERContex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERContex.h; sourceTree = "<group>"; };
+		8CD3C1CD1E80EAB200A54AB9 /* ERContex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERContex.m; sourceTree = "<group>"; };
+		8CD3C1CF1E81333700A54AB9 /* ERResignProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERResignProcess.h; sourceTree = "<group>"; };
+		8CD3C1D01E81333700A54AB9 /* ERResignProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERResignProcess.m; sourceTree = "<group>"; };
 		8CF1909B1E7F94BC00DB3049 /* EasyResigny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyResigny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF190AE1E7F94BC00DB3049 /* EasyResignyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyResignyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF190B21E7F94BC00DB3049 /* EasyResignyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyResignyTests.m; sourceTree = "<group>"; };
@@ -52,21 +73,9 @@
 		8CF190CC1E7F950900DB3049 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		8CF190CE1E7F951100DB3049 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		8CF190D01E7F952B00DB3049 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		8CF190E51E7FACCF00DB3049 /* NYCmdTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYCmdTool.h; sourceTree = "<group>"; };
-		8CF190E61E7FACCF00DB3049 /* NYCmdTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYCmdTool.m; sourceTree = "<group>"; };
-		8CF190E71E7FACCF00DB3049 /* NYCocoaKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYCocoaKit.h; sourceTree = "<group>"; };
-		8CF190E81E7FACCF00DB3049 /* NYCocoaKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYCocoaKit.m; sourceTree = "<group>"; };
-		8CF190EA1E7FACCF00DB3049 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		8CF190EB1E7FACCF00DB3049 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8CF190EC1E7FACCF00DB3049 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8CF190EE1E7FACCF00DB3049 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CF190F01E7FACCF00DB3049 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		8CF190F11E7FACCF00DB3049 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8CF190FF1E7FAE4100DB3049 /* AppDelegate+ERSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ERSetup.h"; sourceTree = "<group>"; };
-		8CF191001E7FAE4100DB3049 /* AppDelegate+ERSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ERSetup.m"; sourceTree = "<group>"; };
-		8CF191031E7FBD5B00DB3049 /* ERDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERDashboardViewController.h; sourceTree = "<group>"; };
-		8CF191041E7FBD5B00DB3049 /* ERDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERDashboardViewController.m; sourceTree = "<group>"; };
-		8CF191051E7FBD5B00DB3049 /* ERDashboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ERDashboardViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +106,79 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8CD3C1AF1E80EA8000A54AB9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8CD3C1B01E80EA8000A54AB9 /* Library */,
+				8CD3C1B51E80EA8000A54AB9 /* Main */,
+				8CD3C1BB1E80EA8000A54AB9 /* Modules */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8CD3C1B01E80EA8000A54AB9 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				8CD3C1B11E80EA8000A54AB9 /* NYCmdTool.h */,
+				8CD3C1B21E80EA8000A54AB9 /* NYCmdTool.m */,
+				8CD3C1B31E80EA8000A54AB9 /* NYCocoaKit.h */,
+				8CD3C1B41E80EA8000A54AB9 /* NYCocoaKit.m */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		8CD3C1B51E80EA8000A54AB9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8CD3C1B61E80EA8000A54AB9 /* AppDelegate+ERSetup.h */,
+				8CD3C1B71E80EA8000A54AB9 /* AppDelegate+ERSetup.m */,
+				8CD3C1B81E80EA8000A54AB9 /* AppDelegate.h */,
+				8CD3C1B91E80EA8000A54AB9 /* AppDelegate.m */,
+				8CD3C1BA1E80EA8000A54AB9 /* main.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8CD3C1BB1E80EA8000A54AB9 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8CD3C1BC1E80EA8000A54AB9 /* Model */,
+				8CD3C1BD1E80EA8000A54AB9 /* ViewControllers */,
+				8CD3C1C11E80EA8000A54AB9 /* Views */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8CD3C1BC1E80EA8000A54AB9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8CD3C1CC1E80EAB200A54AB9 /* ERContex.h */,
+				8CD3C1CD1E80EAB200A54AB9 /* ERContex.m */,
+				8CD3C1CF1E81333700A54AB9 /* ERResignProcess.h */,
+				8CD3C1D01E81333700A54AB9 /* ERResignProcess.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8CD3C1BD1E80EA8000A54AB9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8CD3C1BE1E80EA8000A54AB9 /* ERDashboardViewController.h */,
+				8CD3C1BF1E80EA8000A54AB9 /* ERDashboardViewController.m */,
+				8CD3C1C01E80EA8000A54AB9 /* ERDashboardViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8CD3C1C11E80EA8000A54AB9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8CD3C1C21E80EA8000A54AB9 /* ERDragTextField.h */,
+				8CD3C1C31E80EA8000A54AB9 /* ERDragTextField.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8CF190921E7F94BC00DB3049 = {
 			isa = PBXGroup;
 			children = (
@@ -121,7 +203,7 @@
 		8CF1909D1E7F94BC00DB3049 /* EasyResigny */ = {
 			isa = PBXGroup;
 			children = (
-				8CF190E31E7FACCF00DB3049 /* Classes */,
+				8CD3C1AF1E80EA8000A54AB9 /* Classes */,
 				8CF190ED1E7FACCF00DB3049 /* Resources */,
 			);
 			path = EasyResigny;
@@ -155,39 +237,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8CF190E31E7FACCF00DB3049 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				8CF190E91E7FACCF00DB3049 /* Main */,
-				8CF190E41E7FACCF00DB3049 /* Library */,
-				8CF191021E7FBCD300DB3049 /* Modules */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		8CF190E41E7FACCF00DB3049 /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				8CF190E51E7FACCF00DB3049 /* NYCmdTool.h */,
-				8CF190E61E7FACCF00DB3049 /* NYCmdTool.m */,
-				8CF190E71E7FACCF00DB3049 /* NYCocoaKit.h */,
-				8CF190E81E7FACCF00DB3049 /* NYCocoaKit.m */,
-			);
-			path = Library;
-			sourceTree = "<group>";
-		};
-		8CF190E91E7FACCF00DB3049 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				8CF190EA1E7FACCF00DB3049 /* AppDelegate.h */,
-				8CF190EB1E7FACCF00DB3049 /* AppDelegate.m */,
-				8CF190EC1E7FACCF00DB3049 /* main.m */,
-				8CF190FF1E7FAE4100DB3049 /* AppDelegate+ERSetup.h */,
-				8CF191001E7FAE4100DB3049 /* AppDelegate+ERSetup.m */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
 		8CF190ED1E7FACCF00DB3049 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,16 +245,6 @@
 				8CF190F11E7FACCF00DB3049 /* Info.plist */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		8CF191021E7FBCD300DB3049 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				8CF191031E7FBD5B00DB3049 /* ERDashboardViewController.h */,
-				8CF191041E7FBD5B00DB3049 /* ERDashboardViewController.m */,
-				8CF191051E7FBD5B00DB3049 /* ERDashboardViewController.xib */,
-			);
-			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,7 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CF191071E7FBD5B00DB3049 /* ERDashboardViewController.xib in Resources */,
+				8CD3C1CA1E80EA8000A54AB9 /* ERDashboardViewController.xib in Resources */,
 				8CF190F61E7FACCF00DB3049 /* Assets.xcassets in Resources */,
 				8CF190F71E7FACCF00DB3049 /* MainMenu.xib in Resources */,
 				8CF190F81E7FACCF00DB3049 /* Info.plist in Resources */,
@@ -343,12 +382,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CF191011E7FAE4100DB3049 /* AppDelegate+ERSetup.m in Sources */,
-				8CF190F21E7FACCF00DB3049 /* NYCmdTool.m in Sources */,
-				8CF191061E7FBD5B00DB3049 /* ERDashboardViewController.m in Sources */,
-				8CF190F31E7FACCF00DB3049 /* NYCocoaKit.m in Sources */,
-				8CF190F51E7FACCF00DB3049 /* main.m in Sources */,
-				8CF190F41E7FACCF00DB3049 /* AppDelegate.m in Sources */,
+				8CD3C1C81E80EA8000A54AB9 /* main.m in Sources */,
+				8CD3C1C71E80EA8000A54AB9 /* AppDelegate.m in Sources */,
+				8CD3C1D11E81333700A54AB9 /* ERResignProcess.m in Sources */,
+				8CD3C1C91E80EA8000A54AB9 /* ERDashboardViewController.m in Sources */,
+				8CD3C1C61E80EA8000A54AB9 /* AppDelegate+ERSetup.m in Sources */,
+				8CD3C1C41E80EA8000A54AB9 /* NYCmdTool.m in Sources */,
+				8CD3C1CE1E80EAB200A54AB9 /* ERContex.m in Sources */,
+				8CD3C1C51E80EA8000A54AB9 /* NYCocoaKit.m in Sources */,
+				8CD3C1CB1E80EA8000A54AB9 /* ERDragTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +617,7 @@
 				8CF190C41E7F94BC00DB3049 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8CF190C51E7F94BC00DB3049 /* Build configuration list for PBXNativeTarget "EasyResignyTests" */ = {
 			isa = XCConfigurationList;
@@ -583,6 +626,7 @@
 				8CF190C71E7F94BC00DB3049 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8CF190C81E7F94BC00DB3049 /* Build configuration list for PBXNativeTarget "EasyResignyUITests" */ = {
 			isa = XCConfigurationList;
@@ -591,6 +635,7 @@
 				8CF190CA1E7F94BC00DB3049 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

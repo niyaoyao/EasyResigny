@@ -19,9 +19,9 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    [self applicationDidFinishLaunching];
     self.window.contentViewController = [[ERDashboardViewController alloc] init];
     [self.window makeMainWindow];
-    [self applicationDidFinishLaunching];
 }
 
 
