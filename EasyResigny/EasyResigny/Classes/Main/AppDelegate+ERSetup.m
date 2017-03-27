@@ -7,12 +7,12 @@
 //
 
 #import "AppDelegate+ERSetup.h"
-#import "ERContex.h"
+#import "ERCodesignProcess.h"
 
 @implementation AppDelegate (ERSetup)
 
 - (void)applicationDidFinishLaunching {
-    [ERContex easyResignyDidLaunched];
+    [ERCodesignProcess easyResignyDidLaunched];
 }
 
 @end

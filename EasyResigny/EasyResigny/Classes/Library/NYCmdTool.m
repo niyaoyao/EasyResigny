@@ -4,10 +4,10 @@
 //
 //  Created by NiYao on 20/03/2017.
 //  Copyright © 2017 suneny. All rights reserved.
-///Users/niyao/N.Y./Reverse/Resign/ReMeituan/unsigned/imeituan_no_watch_no_plugins.ipa
 
 #import "NYCmdTool.h"
 #import "NYCocoaKit.h"
+#import <objc/runtime.h>
 
 static NSString * const kCMDZip = @"/usr/bin/zip";
 static NSString * const kCMDUnzip = @"/usr/bin/unzip";
@@ -16,6 +16,8 @@ static NSString * const kCMDSecurity = @"/usr/bin/security";
 static NSString * const kCMDDefaults = @"/usr/bin/defaults";
 static NSString * const kCMDChmod = @"/bin/chmod";
 static NSString * const kCMDPlistBuddy = @"/usr/libexec/PlistBuddy";
+static NSString * const kCMDFind = @"/usr/bin/find";
+static NSString * const kCMDRM = @"/bin/rm";
 
 static const char * kCmdTaskQueueLabel = "that.boring.bear.ny.cmdtask.queue";
 static NSInteger const kErrorCode = 19999;
@@ -23,6 +25,17 @@ static NSInteger const kErrorCode = 19999;
 static NYCmdTool *cmdTool = nil;
 
 @implementation NYCmdTool
+
+
++ (void)printCommand:(NSString *)taskPath arguments:(NSArray *)arguments {
+    
+    NSMutableString *cmdString = [NSMutableString stringWithString:taskPath];
+    for (NSString *arg in arguments) {
+        [cmdString appendString:[NSString stringWithFormat:@" %@", arg]];
+    }
+    
+    NSLog(@"Command Line:\n%@\n", cmdString);
+}
 
 + (instancetype)commonTool {
     static dispatch_once_t onceToken;
@@ -74,17 +87,8 @@ static NYCmdTool *cmdTool = nil;
 }
 
 #pragma mark - Find Certificate Task
-+ (NSTask *)findCertificateIDsTask {
-    return [self taskWithLaunchPath:kCMDSecurity arguments:@[@"find-identity", @"-v", @"-p", @"codesigning"]];
-}
-
 + (void)launchFindCertificateIDsTaskCompletion:(NYCmdToolCompletion)completion {
-    NSTask *findCerTask = [self findCertificateIDsTask];
-    NSPipe *pipe = [self pipeWithTask:findCerTask];
-    
-    __block NSFileHandle *handle = [pipe fileHandleForReading];
-    dispatch_async([self cmdTaskQueue], ^{
-        NSString *outputStr = [[NSString alloc] initWithData:[handle readDataToEndOfFile] encoding:NSASCIIStringEncoding];
+    NYCmdToolCompletion outputHandler = ^(NSError *error, NSString *outputStr) {
         NSArray *outputArray = [outputStr componentsSeparatedByString:@"\n"];
         NSMutableArray *certificates = [NSMutableArray array];
         for (NSString *string in outputArray) {
@@ -95,160 +99,119 @@ static NYCmdTool *cmdTool = nil;
             }
         }
         if (completion) {
-            completion(nil, certificates);
+            completion(error, certificates);
         }
-    });
-    [findCerTask launch];
-}
-
-+ (void)getCertifacationsCompletion:(NYCmdToolCompletion)completion {
-    [self launchFindCertificateIDsTaskCompletion:completion];
+    };
+    [self launchTaskPath:kCMDSecurity arguments:@[@"find-identity", @"-v", @"-p", @"codesigning"] currentPath:nil outputHandler:outputHandler];
 }
 
 #pragma mark - Load Provision Profile Task
-+ (NSTask *)loadProvinsionProfilePlistTask:(NSString *)provisionProfilePath {
-    return [self taskWithLaunchPath:kCMDSecurity arguments:@[@"cms", @"-D", @"-i", provisionProfilePath]];
-}
-
 + (void)launchLoadProvisionProfilePath:(NSString *)provisionProfilePath completion:(NYCmdToolCompletion)completion {
-    if ([self fileExistsAtPath:provisionProfilePath]) {
-        NSTask *loadProvisionPlistTask = [self loadProvinsionProfilePlistTask:provisionProfilePath];
-        NSPipe *pipe = [self pipeWithTask:loadProvisionPlistTask];
+    NYCmdToolCompletion outputHandler = ^(NSError *error, NSString *outputStr) {
+        NSString *xmlStartStr = @"<?xml";
+        NSRange range = [outputStr rangeOfString:xmlStartStr];
+        if (range.location != NSNotFound) {
+            outputStr = [outputStr substringFromIndex: range.location];
+        }
         
-        __block NSFileHandle *handle = [pipe fileHandleForReading];
-        dispatch_async([self cmdTaskQueue], ^{
-            NSString *outputStr = [[NSString alloc] initWithData:[handle readDataToEndOfFile] encoding:NSASCIIStringEncoding];
-            NSString *xmlStartStr = @"<?xml";
-            NSRange range = [outputStr rangeOfString:xmlStartStr];
-            if (range.location != NSNotFound) {
-                outputStr = [outputStr substringFromIndex: range.location];
-            }
-            
-            NSDictionary *plistDic = outputStr.propertyList;
-            
-            if (completion) {
-                completion(nil, plistDic);
-            }
-            
-        });
-        [loadProvisionPlistTask launch];
+        NSDictionary *plistDic = outputStr.propertyList;
+        
+        if (completion) {
+            completion(error, plistDic);
+        }
+    };
+    
+    if ([self fileExistsAtPath:provisionProfilePath]) {
+        [self launchTaskPath:kCMDSecurity arguments:@[@"cms", @"-D", @"-i", provisionProfilePath] currentPath:nil outputHandler:outputHandler];
     } else {
         completion([self errorInfo:@"Provinsion File is not Exist!"], nil);
     }
 }
 
-+ (void)loadProvinsionProfilePlistWithPath:(NSString *)provisionProfilePath completion:(NYCmdToolCompletion)completion {
-    [self launchLoadProvisionProfilePath:provisionProfilePath completion:completion];
-}
-
-
 #pragma mark - Unzip App Task
-+ (NSTask *)unzipSource:(NSString *)source destination:(NSString *)destination {
-    return [self taskWithLaunchPath:kCMDUnzip arguments:@[@"-q", source, @"-d", destination]];
-}
-
 + (void)launchUnzipAppTaskWithSource:(NSString *)source destination:(NSString *)destination completion:(NYCmdToolCompletion)completion {
-    NSTask *unzipTask = [self unzipSource:source destination:destination];
-    NSPipe *pipe = [self pipeWithTask:unzipTask];
-    __block NSFileHandle *handle = [pipe fileHandleForReading];
-    dispatch_async([self cmdTaskQueue], ^{
-        NSString *outputStr = [[NSString alloc] initWithData:[handle readDataToEndOfFile] encoding:NSASCIIStringEncoding];
-        if (completion) {
-            completion(nil, outputStr);
-        }
-    });
-    
-    [unzipTask launch];
-}
-
-+ (void)unzipAppWithIPAPath:(NSString *)ipaPath workSpace:(NSString *)workSpace completion:(NYCmdToolCompletion)completion {
-    [self launchUnzipAppTaskWithSource:ipaPath destination:workSpace completion:completion];
+    [self launchTaskPath:kCMDUnzip arguments:@[@"-q", source, @"-d", destination] currentPath:nil outputHandler:completion];
 }
 
 #pragma mark - Defaults Read Task
 + (void)launchReadTaskPath:(NSString *)path key:(NSString *)key completion:(NYCmdToolCompletion)completion {
-    NSTask *readTask = [self taskWithLaunchPath:kCMDDefaults arguments:@[@"read", path, key]];
-    NSPipe *pipe = [self pipeWithTask:readTask];
-    __block NSFileHandle *handle = [pipe fileHandleForReading];
-    dispatch_async([self cmdTaskQueue], ^{
-        NSString *outputStr = [[NSString alloc] initWithData:[handle readDataToEndOfFile] encoding:NSASCIIStringEncoding];
-        if (completion) {
-            completion(nil, outputStr);
-        }
-    });
-    [readTask launch];
+    [self launchTaskPath:kCMDDefaults arguments:@[@"read", path, key] currentPath:nil outputHandler:completion];
 }
 
 #pragma mark - Defaults Write Task
 + (void)launchWriteTaskPlistPath:(NSString *)plistPath key:(NSString *)key value:(NSString *)value completion:(NYCmdToolCompletion)completion {
-    NSTask *task = [self taskWithLaunchPath:kCMDDefaults arguments:@[@"write", plistPath, key, value]];
-    NSPipe *pipe = [self pipeWithTask:task];
-    __block NSFileHandle *handle = [pipe fileHandleForReading];
-    dispatch_async([self cmdTaskQueue], ^{
-        NSString *outputStr = [[NSString alloc] initWithData:[handle readDataToEndOfFile] encoding:NSASCIIStringEncoding];
-        if (completion) {
-            completion(nil, outputStr);
-        }
-    });
-    [task launch];
+    [self launchTaskPath:kCMDDefaults arguments:@[@"write", plistPath, key, value] currentPath:nil outputHandler:completion];
 }
 
 #pragma mark - Chmod Task
 + (void)launchChmodExecutable:(NSString *)executablePath completion:(NYCmdToolCompletion)completion {
-    NSTask *task = [self taskWithLaunchPath:kCMDChmod arguments:@[@"755", executablePath]];
-    NSPipe *pipe = [self pipeWithTask:task];
-    __block NSFileHandle *handle = [pipe fileHandleForReading];
-    dispatch_async([self cmdTaskQueue], ^{
-        NSString *outputStr = [[NSString alloc] initWithData:[handle readDataToEndOfFile] encoding:NSASCIIStringEncoding];
-        if (completion) {
-            completion(nil, outputStr);
-        }
-    });
-    [task launch];
+    [self launchTaskPath:kCMDChmod arguments:@[@"755", executablePath] currentPath:nil outputHandler:completion];
 }
 
 #pragma mark - Save Entitlements Task
 + (NSString *)saveEntitlements:(NSDictionary *)entitlements savedDir:(NSString *)savedDir {
     NSString *entPath = [savedDir stringByAppendingPathComponent:@"entitlements.plist"];
-    NSLog(@"%@", entPath);
+    NSLog(@"========== %@", entPath);
     [entitlements writeToFile:entPath atomically:YES];
     return entPath;
 }
 
+#pragma mark - Find Task
++ (void)launchTaskFindPath:(NSString *)path fileName:(NSString *)fileName completion:(NYCmdToolCompletion)completion {
+    [self launchTaskPath:kCMDFind arguments:@[path, @"-name", fileName] currentPath:nil outputHandler:^(NSError *error, NSString *outputStr) {
+        NSString *errorStr = @"No such file or directory";
+        NSRange range = [outputStr rangeOfString:errorStr];
+        if (range.location != NSNotFound) {
+            if (completion) {
+                completion(nil, nil);
+            }
+        } else {
+            if (completion) {
+                completion([self errorInfo:outputStr], nil);
+            }
+        }
+    }];
+}
 
 #pragma mark - Codesign Task
 + (void)launchCodesignCertificate:(NSString *)certificate entitlementsPlisPath:(NSString *)entitlementsPlisPath
                           appPath:(NSString *)appPath completion:(NYCmdToolCompletion)completion {
     NSString *entStr = [NSString stringWithFormat:@"--entitlements=%@", entitlementsPlisPath];
-    NSTask *task = [self taskWithLaunchPath:kCMDCodesign arguments:@[@"-vvv", @"-fs", certificate, @"--no-strict", entStr, appPath]];
-    NSPipe *pipe = [self pipeWithTask:task];
-    __block NSFileHandle *handle = [pipe fileHandleForReading];
-    dispatch_async([self cmdTaskQueue], ^{
-        NSString *outputStr = [[NSString alloc] initWithData:[handle readDataToEndOfFile] encoding:NSASCIIStringEncoding];
-        if (completion) {
-            completion(nil, outputStr);
-        }
-    });
-    [task launch];
+    [self launchTaskPath:kCMDCodesign arguments:@[@"-vvv", @"-fs", certificate, @"--no-strict", entStr, appPath] currentPath:nil outputHandler:completion];
 }
 
 #pragma mark - Zip IPA Task
 + (void)launchZipCurrentPath:(NSString *)current destinationPath:(NSString *)destination appPath:(NSString *)appPath completion:(NYCmdToolCompletion)completion {
-    NSTask *task = [self taskWithLaunchPath:kCMDZip arguments:@[@"-qry", destination, @"."]];
-    [task setCurrentDirectoryPath:current];
-    NSPipe *pipe = [self pipeWithTask:task];
-    __block NSFileHandle *handle = [pipe fileHandleForReading];
-    dispatch_async([self cmdTaskQueue], ^{
-        NSString *outputStr = [[NSString alloc] initWithData:[handle readDataToEndOfFile] encoding:NSASCIIStringEncoding];
-        if (completion) {
-            completion(nil, outputStr);
-        }
-    });
-    [task launch];
+    [self launchTaskPath:kCMDZip arguments:@[@"-qry", destination, @"."] currentPath:current outputHandler:completion];
 }
 
 
++ (void)launchRemovePath:(NSString *)path completion:(NYCmdToolCompletion)completion {
+    [self launchTaskPath:kCMDRM arguments:@[@"-fr", path] currentPath:nil outputHandler:completion];
+}
+
 #pragma mark - Helper
++ (void)launchTaskPath:(NSString *)taskPath arguments:(NSArray *)arguments currentPath:(NSString *)current outputHandler:(NYCmdToolCompletion)outputHandler {
+    NSTask *task = [self taskWithLaunchPath:taskPath arguments:arguments];
+    NSPipe *pipe = [self pipeWithTask:task];
+    if (current.length > 0) {
+        [task setCurrentDirectoryPath:current];
+    }
+    
+    __block NSFileHandle *handle = [pipe fileHandleForReading];
+    
+    dispatch_block_t taskDefaultBlock = ^{
+        NSString *outputStr = [[NSString alloc] initWithData:[handle readDataToEndOfFile] encoding:NSASCIIStringEncoding];
+        if (outputHandler) {
+            outputHandler(nil, outputStr);
+        }
+    };
+    
+    dispatch_async([self cmdTaskQueue], taskDefaultBlock);
+    [task launch];
+    [self printCommand:taskPath arguments:arguments];
+}
+
 + (NSTask *)taskWithLaunchPath:(NSString *)launchPath arguments:(NSArray *)arguments {
     NSTask *task = [[NSTask alloc] init];
     [task setLaunchPath:launchPath];

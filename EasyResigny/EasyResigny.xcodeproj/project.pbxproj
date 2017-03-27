@@ -16,7 +16,7 @@
 		8CD3C1CA1E80EA8000A54AB9 /* ERDashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CD3C1C01E80EA8000A54AB9 /* ERDashboardViewController.xib */; };
 		8CD3C1CB1E80EA8000A54AB9 /* ERDragTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C1C31E80EA8000A54AB9 /* ERDragTextField.m */; };
 		8CD3C1CE1E80EAB200A54AB9 /* ERContex.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C1CD1E80EAB200A54AB9 /* ERContex.m */; };
-		8CD3C1D11E81333700A54AB9 /* ERResignProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C1D01E81333700A54AB9 /* ERResignProcess.m */; };
+		8CD3C1D11E81333700A54AB9 /* ERCodesignProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3C1D01E81333700A54AB9 /* ERCodesignProcess.m */; };
 		8CF190B31E7F94BC00DB3049 /* EasyResignyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF190B21E7F94BC00DB3049 /* EasyResignyTests.m */; };
 		8CF190BE1E7F94BC00DB3049 /* EasyResignyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF190BD1E7F94BC00DB3049 /* EasyResignyUITests.m */; };
 		8CF190CD1E7F950900DB3049 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF190CC1E7F950900DB3049 /* Cocoa.framework */; };
@@ -61,8 +61,8 @@
 		8CD3C1C31E80EA8000A54AB9 /* ERDragTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERDragTextField.m; sourceTree = "<group>"; };
 		8CD3C1CC1E80EAB200A54AB9 /* ERContex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERContex.h; sourceTree = "<group>"; };
 		8CD3C1CD1E80EAB200A54AB9 /* ERContex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERContex.m; sourceTree = "<group>"; };
-		8CD3C1CF1E81333700A54AB9 /* ERResignProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERResignProcess.h; sourceTree = "<group>"; };
-		8CD3C1D01E81333700A54AB9 /* ERResignProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERResignProcess.m; sourceTree = "<group>"; };
+		8CD3C1CF1E81333700A54AB9 /* ERCodesignProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERCodesignProcess.h; sourceTree = "<group>"; };
+		8CD3C1D01E81333700A54AB9 /* ERCodesignProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERCodesignProcess.m; sourceTree = "<group>"; };
 		8CF1909B1E7F94BC00DB3049 /* EasyResigny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyResigny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF190AE1E7F94BC00DB3049 /* EasyResignyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyResignyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CF190B21E7F94BC00DB3049 /* EasyResignyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyResignyTests.m; sourceTree = "<group>"; };
@@ -154,8 +154,8 @@
 			children = (
 				8CD3C1CC1E80EAB200A54AB9 /* ERContex.h */,
 				8CD3C1CD1E80EAB200A54AB9 /* ERContex.m */,
-				8CD3C1CF1E81333700A54AB9 /* ERResignProcess.h */,
-				8CD3C1D01E81333700A54AB9 /* ERResignProcess.m */,
+				8CD3C1CF1E81333700A54AB9 /* ERCodesignProcess.h */,
+				8CD3C1D01E81333700A54AB9 /* ERCodesignProcess.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -384,7 +384,7 @@
 			files = (
 				8CD3C1C81E80EA8000A54AB9 /* main.m in Sources */,
 				8CD3C1C71E80EA8000A54AB9 /* AppDelegate.m in Sources */,
-				8CD3C1D11E81333700A54AB9 /* ERResignProcess.m in Sources */,
+				8CD3C1D11E81333700A54AB9 /* ERCodesignProcess.m in Sources */,
 				8CD3C1C91E80EA8000A54AB9 /* ERDashboardViewController.m in Sources */,
 				8CD3C1C61E80EA8000A54AB9 /* AppDelegate+ERSetup.m in Sources */,
 				8CD3C1C41E80EA8000A54AB9 /* NYCmdTool.m in Sources */,
@@ -531,7 +531,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/EasyResigny/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = that.boring.bear.ny.EasyResigny;
+				PRODUCT_BUNDLE_IDENTIFIER = that.boring.bear.ny.easy.resigny;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -543,7 +543,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/EasyResigny/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = that.boring.bear.ny.EasyResigny;
+				PRODUCT_BUNDLE_IDENTIFIER = that.boring.bear.ny.easy.resigny;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

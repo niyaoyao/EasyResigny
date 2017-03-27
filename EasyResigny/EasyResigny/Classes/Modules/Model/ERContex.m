@@ -31,6 +31,9 @@ static NSString * const kWorkSpacePathKey = @"WorkSpace";
 static NSString * const kWorkSpacePayloadPathKey = @"WorkSpacePayloadPath";
 static NSString * const kWorkSpaceAppPathKey = @"WorkSpaceAppPath";
 static NSString * const kWorkSpaceAppInfoPlistPathKey = @"WorkSpaceAppInfoPlistPath";
+static NSString * const kWorkSpaceExecutableKey = @"CFBundleExecutableName";
+
+static NSString * const kResignedAppSavePathKey = @"ResignedAppSavePath";
 
 @implementation ERContex
 
@@ -40,14 +43,6 @@ static NSString * const kWorkSpaceAppInfoPlistPathKey = @"WorkSpaceAppInfoPlistP
         context = [[ERContex alloc] init];
     });
     return context;
-}
-
-+ (void)easyResignyDidLaunched {
-    NSString *workSpace = [NSTemporaryDirectory() stringByAppendingString:[[NSBundle mainBundle]bundleIdentifier]];
-    [[NSFileManager defaultManager] removeItemAtPath:workSpace error:nil];
-    [[NSFileManager defaultManager] createDirectoryAtPath:workSpace withIntermediateDirectories:TRUE attributes:nil error:nil];
-    [ERContex setWorkSpacePath:workSpace];
-    NSLog(@"workSpace: %@\n", workSpace);
 }
 
 #pragma mark - Getter & Setter
@@ -132,6 +127,7 @@ static NSString * const kWorkSpaceAppInfoPlistPathKey = @"WorkSpaceAppInfoPlistP
 + (NSString *)getEntitlementsPath {
     return [[ERContex getWorkSpacePath] stringByAppendingPathComponent:@"entitlements.plist"];
 }
+
 + (void)setWorkSpacePath:(NSString *)tempWorkingPath {
     [ERContex setContextObject:tempWorkingPath key:kWorkSpacePathKey];
 }
@@ -143,8 +139,7 @@ static NSString * const kWorkSpaceAppInfoPlistPathKey = @"WorkSpaceAppInfoPlistP
 + (void)setPayloadPath {
     NSString *path = [[ERContex getWorkSpacePath] stringByAppendingPathComponent:@"Payload"];
     [ERContex setContextObject:path key:kWorkSpacePayloadPathKey];
-    NSArray *dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[ERContex getPayloadPath]
-                                                                               error:nil];
+    NSArray *dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[ERContex getPayloadPath] error:nil];
     
     for (NSString *file in dirContents) {
         if ([[[file pathExtension] lowercaseString] isEqualToString:@"app"]) {
@@ -173,6 +168,51 @@ static NSString * const kWorkSpaceAppInfoPlistPathKey = @"WorkSpaceAppInfoPlistP
 
 + (NSString *)getInfoPlistPath {
     return [ERContex getContextObjectForKey:kWorkSpaceAppInfoPlistPathKey];
+}
+
++ (NSString *)getWatchPath {
+    return [[ERContex getAppPath] stringByAppendingPathComponent:@"Watch"];
+}
+
++ (void)setCFBundleExecutableName:(NSString *)executableName {
+    [ERContex setContextObject:executableName key:kWorkSpaceExecutableKey];
+}
+
++ (NSString *)getCFBundleExecutableName {
+    return [ERContex getContextObjectForKey:kWorkSpaceExecutableKey];
+}
+
++ (NSString *)getExecutableFilePath {
+    return [[ERContex getAppPath] stringByAppendingPathComponent:[ERContex getContextObjectForKey:kWorkSpaceExecutableKey]];
+}
+
++ (void)setResignedAppSavePath:(NSString *)savePath {
+    [ERContex setContextObject:savePath key:kResignedAppSavePathKey];
+}
+
++ (NSString *)getResignedAppSavePath {
+    return [ERContex getContextObjectForKey:kResignedAppSavePathKey];
+}
+
++ (void)clearAll {
+    [ERContex removeContextObjectForKey:kIPAOriginPathKey];
+    [ERContex removeContextObjectForKey:kSelectCertificateKey];
+    [ERContex removeContextObjectForKey:kSelectProvisionProfilePathKey];
+    [ERContex removeContextObjectForKey:kAppBundleIDKey];
+    [ERContex removeContextObjectForKey:kAppNameKey];
+    [ERContex removeContextObjectForKey:kAppVersionKey];
+    [ERContex removeContextObjectForKey:kAppBuildCodeKey];
+    [ERContex removeContextObjectForKey:kProvisionPlistKey];
+    [ERContex removeContextObjectForKey:kEntitlementsKey];
+    [ERContex removeContextObjectForKey:kInfoPlistBundleIDKey];
+    [ERContex removeContextObjectForKey:kFrameworksDirName];
+    [ERContex removeContextObjectForKey:kProductsDirName];
+    
+    [ERContex removeContextObjectForKey:kWorkSpacePathKey];
+    [ERContex removeContextObjectForKey:kWorkSpacePayloadPathKey];
+    [ERContex removeContextObjectForKey:kWorkSpaceAppPathKey];
+    [ERContex removeContextObjectForKey:kWorkSpaceAppInfoPlistPathKey];
+    [ERContex removeContextObjectForKey:kWorkSpaceExecutableKey];
 }
 
 #pragma mark + Helper
