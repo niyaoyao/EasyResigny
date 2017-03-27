@@ -38,13 +38,20 @@
 + (NSString *)getEntitlementsPath;
 
 + (NSString *)getWorkSpacePath;
++ (void)setWorkSpacePath:(NSString *)tempWorkingPath;
 
 + (void)setPayloadPath;
 + (NSString *)getPayloadPath;
 + (NSString *)getAppPath;
 + (NSString *)getInfoPlistPath;
++ (NSString *)getWatchPath;
 
++ (void)setResignedAppSavePath:(NSString *)savePath;
++ (NSString *)getResignedAppSavePath;
 
-+ (void)easyResignyDidLaunched;
++ (void)setCFBundleExecutableName:(NSString *)executableName;
++ (NSString *)getCFBundleExecutableName;
++ (NSString *)getExecutableFilePath;
++ (void)clearAll;
 
 @end
