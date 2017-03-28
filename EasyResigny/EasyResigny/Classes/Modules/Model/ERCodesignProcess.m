@@ -20,29 +20,21 @@
                   signCertificateCompletion:(ERCodesignCompletion)signCertificateCompletion
                           saveIPACompletion:(ERCodesignCompletion)saveIPACompletion {
     
-    [self loadProvisionProfileCompletion:loadProvisionProfileCompletion];
-    
-    
-    [self unzipIPACompletion:unzipIPACompletion];
-    
-    
-    
-    [self getExecutableFileCompletion:getExecutableFileCompletion];
-    
-    
-    [self changeExeModeCompletion:changeExeModeCompletion];
-    
-    
-    [self writeInfoPlistCompletion:writeInfoPlistCompletion];
-    
-    
-    [self signCertificateCompletion:signCertificateCompletion];
-    
-    [self saveIPA];
-    if (saveIPACompletion) {
-        NSString *str = [NSString stringWithFormat:@"Save IPA :%@", [ERContex getResignedAppSavePath]];
-        saveIPACompletion(str);
-    }
+    dispatch_async([NYCmdTool cmdTaskQueue], ^{
+        [self loadProvisionProfileCompletion:loadProvisionProfileCompletion];
+        
+        [self unzipIPACompletion:unzipIPACompletion];
+        
+        [self getExecutableFileCompletion:getExecutableFileCompletion];
+        
+        [self changeExeModeCompletion:changeExeModeCompletion];
+        
+        [self writeInfoPlistCompletion:writeInfoPlistCompletion];
+        
+        [self signCertificateCompletion:signCertificateCompletion];
+        
+        [self saveIPACompletion:saveIPACompletion];
+    });
 }
 
 + (void)loadProvisionProfileCompletion:(ERCodesignCompletion)completion {
@@ -52,11 +44,11 @@
         [NYCmdTool saveEntitlements:[ERContex getEntitlements]
                            savedDir:[ERContex getWorkSpacePath]];
         dispatch_semaphore_signal(semaphore);
-        if (completion) {
-            completion([ERContex getResignedAppBundleID]);
-        }
     }];
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    if (completion) {
+        completion([ERContex getResignedAppBundleID]);
+    }
 }
 
 + (void)unzipIPACompletion:(ERCodesignCompletion)unzipIPACompletion {
@@ -65,11 +57,12 @@
         [ERContex setPayloadPath];
         [ERCodesignProcess rmPath];
         dispatch_semaphore_signal(semaphore);
-        if (unzipIPACompletion) {
-            unzipIPACompletion(@"Start to Unzip IPA...");
-        }
+        
     }];
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    if (unzipIPACompletion) {
+        unzipIPACompletion(@"Start to Unzip IPA...");
+    }
 }
 
 + (void)getExecutableFileCompletion:(ERCodesignCompletion)getExecutableFileCompletion {
@@ -78,11 +71,11 @@
         exeName = [exeName stringByReplacingOccurrencesOfString:@"\n" withString:@""];
         [ERContex setCFBundleExecutableName:exeName];
         dispatch_semaphore_signal(semaphore);
-        if (getExecutableFileCompletion) {
-            getExecutableFileCompletion(@"Start to Find App Executable File...");
-        }
     }];
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    if (getExecutableFileCompletion) {
+        getExecutableFileCompletion(@"Start to Find App Executable File...");
+    }
 }
 
 + (void)changeExeModeCompletion:(ERCodesignCompletion)changeExeModeCompletion {
@@ -90,11 +83,11 @@
     [NYCmdTool launchChmodExecutable:[ERContex getExecutableFilePath] completion:^(NSError *error, id object) {
         NSLog(@"%@", object);
         dispatch_semaphore_signal(semaphore);
-        if (changeExeModeCompletion) {
-            changeExeModeCompletion(@"Start to Change Executable File Mode...");
-        }
     }];
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    if (changeExeModeCompletion) {
+        changeExeModeCompletion(@"Start to Change Executable File Mode...");
+    }
 }
 
 + (void)writeBundleID {
@@ -155,7 +148,7 @@
 
 }
 
-+ (void)saveIPA {
++ (void)saveIPACompletion:(ERCodesignCompletion)completion {
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
 
     NSString *ipa = [[ERContex getIPAOriginPath] lastPathComponent];
@@ -174,6 +167,10 @@
         dispatch_semaphore_signal(semaphore);
     }];
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    if (completion) {
+        NSString *str = [NSString stringWithFormat:@"Save IPA :%@", [ERContex getResignedAppSavePath]];
+        completion(str);
+    }
 }
 
 + (void)rmPath {
